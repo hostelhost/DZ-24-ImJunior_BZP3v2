@@ -12,12 +12,9 @@ public class Player : MonoBehaviour, IDamageable
             if (collectable is Gold gold)
                 TakeCoin(gold.Execute());
             else if (collectable is AidKit aidKit)
-                TryToAcceptLifeForce(aidKit.Execute());
+                AddLifeForceIfValid(aidKit.Execute());
         }
     }
-
-    public void TryToAcceptLifeForce(int lifeForce) =>  
-        _health.TryToAcceptLifeForce(lifeForce);
 
     public int TakeDamage(int damage)
     {
@@ -31,6 +28,9 @@ public class Player : MonoBehaviour, IDamageable
 
         return 0;
     }
+
+    public void AddLifeForceIfValid(int lifeForce) =>  
+        _health.AddLifeForceIfValid(lifeForce);
 
     private void TakeCoin(int coin) =>   
         _bag.TakeCoin(coin);

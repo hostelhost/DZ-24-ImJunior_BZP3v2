@@ -11,7 +11,7 @@ public class HealthSmoothSliderDisplay : MonoBehaviour, IDisplayHealth
     private WaitForSeconds _waitForSeconds;
     private Coroutine _coroutine;
 
-    public void Initialization(int maximumLifeForce)
+    public void Initialize(int maximumLifeForce)
     {
         _smoothSlider.maxValue = maximumLifeForce;
         _smoothSlider.value = maximumLifeForce;
@@ -31,6 +31,7 @@ public class HealthSmoothSliderDisplay : MonoBehaviour, IDisplayHealth
         while (_smoothSlider.value != lifeForce)
         {
             _smoothSlider.value = Mathf.MoveTowards(_smoothSlider.value, lifeForce, _speed);
+
             yield return _waitForSeconds;
         }
     }

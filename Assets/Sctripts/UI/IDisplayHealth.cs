@@ -1,6 +1,6 @@
 public interface IDisplayHealth
 {
-    void Initialization(int maximumLifeForce) { }
+    void Initialize(int maximumLifeForce) { }
 
     public void Print(int lifeForce) { }
 }

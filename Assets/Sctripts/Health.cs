@@ -48,10 +48,11 @@ public class Health : MonoBehaviour
         }
 
         damageDone = 0;
+
         return false;
     }
 
-    public void TryToAcceptLifeForce(int lifeForce)
+    public void AddLifeForceIfValid(int lifeForce)
     {
         if (IsCorrectValue(lifeForce))
         {

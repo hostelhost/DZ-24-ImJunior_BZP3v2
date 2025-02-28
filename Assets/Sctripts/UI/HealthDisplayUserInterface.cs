@@ -3,12 +3,13 @@ using UnityEngine;
 public class HealthDisplayUserInterface : MonoBehaviour
 {
     [SerializeField] private Health _health;
+
     private IDisplayHealth[] _displayHealths;
 
     private void Start()
     {
         _displayHealths = GetComponents<IDisplayHealth>();
-        Initialization();
+        Initialize();
     }
 
     private void OnEnable()
@@ -21,11 +22,11 @@ public class HealthDisplayUserInterface : MonoBehaviour
         _health.HealthHasChanged -= Print;
     }
 
-    private void Initialization()
+    private void Initialize()
     {
         foreach (IDisplayHealth displayHealth in _displayHealths)
         {
-            displayHealth.Initialization(_health.GetMaximumLifeForce());
+            displayHealth.Initialize(_health.GetMaximumLifeForce());
             displayHealth.Print(_health.LifeForce);
         }
     }

@@ -6,9 +6,8 @@ public class Attacker : MonoBehaviour
 {
     [SerializeField] private int _attack = 10;
     [SerializeField] private float _timeInterval = 1f;
-    private Dictionary<IDamageable, Coroutine> _activeCoroutines = new Dictionary<IDamageable, Coroutine>();
 
-    private Coroutine _coroutine;
+    private Dictionary<IDamageable, Coroutine> _activeCoroutines = new Dictionary<IDamageable, Coroutine>();
     private WaitForSeconds _waitForSeconds;
 
     private void Awake()

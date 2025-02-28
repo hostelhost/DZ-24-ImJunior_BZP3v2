@@ -4,9 +4,10 @@ using UnityEngine;
 public class HealthTextDisplay : MonoBehaviour, IDisplayHealth
 {
     [SerializeField] private TextMeshProUGUI _text;
+
     private int _maximumLifeForce;
 
-    public void Initialization(int maximumLifeForce)
+    public void Initialize(int maximumLifeForce)
     {
         _maximumLifeForce = maximumLifeForce;
     }

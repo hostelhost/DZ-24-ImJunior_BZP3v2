@@ -45,7 +45,7 @@ public class Vampirism : MonoBehaviour
             if (_detector.TryIdentifyNearestTarget(out Enemy enemy))
             {
                 damageDone = enemy.TakeDamage(_powerAbility);
-                _player.TryToAcceptLifeForce(damageDone);
+                _player.AddLifeForceIfValid(damageDone);
             }
 
             yield return _waitForSecondsPauseTimeBetweenTicks;
